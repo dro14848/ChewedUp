@@ -15,7 +15,7 @@ class Product(db.Model):
     type = db.Colum(db.String(50))
 
 
-    
+    # users = db.relationship("User", back_populates="product")
     reviews = db.relationship("Review", back_populates="product", cascade='all, delete')
     productimages = db.relationship("ProductImages", back_populates="product", cascade='all, delete')
 

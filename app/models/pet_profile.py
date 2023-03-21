@@ -9,3 +9,9 @@ class PetProfile(db.Model):
         __table_args__ = {'schema': SCHEMA}
 
     id = db.Column(db.Integer, primary_key=True)
+
+
+    def to_dict(self):
+        return {
+            'id': self.id
+        }
