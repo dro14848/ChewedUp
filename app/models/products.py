@@ -10,13 +10,13 @@ class Product(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(50))
     description = db.Column(db.String(255))
-    price = db.Colum(db.Float())
-    type = db.Colum(db.String(50))
+    price = db.Column(db.Float())
+    type = db.Column(db.String(50))
 
 
     # users = db.relationship("User", back_populates="product")
-    reviews = db.relationship("Review", back_populates="product", cascade='all, delete')
-    productimages = db.relationship("ProductImages", back_populates="product", cascade='all, delete')
+    # reviews = db.relationship("Review", back_populates="product", cascade='all, delete')
+    # productimages = db.relationship("ProductImages", back_populates="product", cascade='all, delete')
 
     def to_dict(self):
         return {
