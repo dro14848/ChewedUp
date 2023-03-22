@@ -32,4 +32,5 @@ def seed():
 def undo():
     undo_users()
     undo_products()
+    undo_productImages()
     # Add other undo functions here
