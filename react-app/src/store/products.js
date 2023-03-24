@@ -17,7 +17,9 @@ const loadOneProduct = (product) => ({
 
 export const loadProductsThunk = () => async (dispatch) => {
     const response = await fetch (`api/products/`)
+    // console.log("RESPONSE", response)
     const data = await response.json()
+    // console.log("DATA", data)
     dispatch(loadAllProducts(data))
     return response
 }
@@ -35,21 +37,25 @@ export const loadSingleProdThunk = (id) => async (dispatch) => {
 const initialState = {allProducts:{}, singleProduct: {}}
 
 //REDUCEr
-export const productReducers = (state = initialState, action) => {
+export const productReducer = (state = initialState, action) => {
     let newState;
     switch(action.type){
         case LOAD_ALL:
             newState = {...state}
-            let newStateCopy = {...newState.allProducts}
-            newStateCopy[action.payload.id] = action.payload
-            newState.allProducts = newStateCopy
+            let allProductsCopy = {}
+            // console.log("STATE", newState)
+            action.payload.products.forEach(product => {
+                // console.log(product)
+                allProductsCopy[product.id] = product
+            })
+            newState.allProducts = allProductsCopy
+            // console.log("allproductscopy", allProductsCopy)
             return newState
         case LOAD_ONE:
-            newState = {...state}
-            // console.log("Action", action)
-            newState.singleProduct = action.payload
-            return newState
+          
         default:
             return state
     }
 }
+
+export default productReducer
