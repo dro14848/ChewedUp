@@ -25,10 +25,11 @@ export const loadProductsThunk = () => async (dispatch) => {
 }
 
 export const loadSingleProdThunk = (id) => async (dispatch) => {
-    const response = await fetch (`api/products/${id}`)
+    const response = await fetch (`/api/products/${id}`)
+    // console.log('RES', response)
     const data = await response.json()
 
-    dispatch(loadSingleProdThunk(data))
+    dispatch(loadOneProduct(data))
     return response
 }
 
@@ -52,7 +53,9 @@ export const productReducer = (state = initialState, action) => {
             // console.log("allproductscopy", allProductsCopy)
             return newState
         case LOAD_ONE:
-          
+          newState = {...state}
+          newState.singleProduct = action.payload
+          return newState
         default:
             return state
     }

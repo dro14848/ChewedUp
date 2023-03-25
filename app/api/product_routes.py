@@ -17,7 +17,7 @@ def allProducts():
     return {'products': allProducts}
 
 # GET ONE PRODUCT
-@product_routes.route('<int:id>')
+@product_routes.route('/<int:id>')
 def singleProduct(id):
     product = Product.query.get(id)
     images = ProductImages.query.get(id)
