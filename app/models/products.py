@@ -17,6 +17,7 @@ class Product(db.Model):
     
     # reviews = db.relationship("Review", back_populates="product", cascade='all, delete')
     productimages = db.relationship("ProductImages", back_populates="product", cascade='all, delete')
+    cartJoined = db.relationship("Cart", back_populates='products', secondary="cartJoined")
 
     def to_dict(self):
         return {
