@@ -13,7 +13,7 @@ def readCart(id):
     cartItems = []
     for items in carts:
         allProd = []
-        print("CART LOOP", items)
+        # print("CART LOOP", items)
         for product in items.products:
             productsObj = product.to_dict()
             allProd.append(productsObj)
@@ -21,10 +21,19 @@ def readCart(id):
     cartObj = items.to_dict()
     cartObj.update({"cart": allProd})
     cartItems.append(cartObj)
-    testcart = {
+    cartResult = {
         "cart": cartItems
     }
     # print("CART ============", cartObj)
-    print("CART ITEMS +++++++++++++++++", cartItems)
+    # print("CART ITEMS +++++++++++++++++", cartItems)
 
-    return testcart
+    return cartResult
+
+# Create cart on user creation
+@cart_routes.route('/', methods=["POST"])
+def cart_creation():
+    user = current_user
+    new_cart = Cart(user_id == user.id)
+    db.session.add(new_cart)
+    db.session.commit()
+    return new_cart.to_dict()

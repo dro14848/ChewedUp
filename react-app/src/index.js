@@ -7,6 +7,7 @@ import { ModalProvider, Modal } from "./context/Modal";
 import configureStore from "./store";
 import * as sessionActions from "./store/session";
 import * as productActions from './store/products'
+import * as cartActions from './store/cart'
 import App from "./App";
 
 import "./index.css";
@@ -16,7 +17,8 @@ const store = configureStore();
 if (process.env.NODE_ENV !== "production") {
 	window.store = store;
 	window.sessionActions = sessionActions;
-	window.productActions = productActions
+	window.productActions = productActions;
+	window.cartActions = cartActions;
 }
 
 // Wrap the application with the Modal provider and render the Modal component
