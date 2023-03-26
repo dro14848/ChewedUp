@@ -33,6 +33,11 @@ export const cartReducer = (state = initialState, action) => {
         case CREATE_CART:
 
         case GET_CART:
+            newState = {...state}
+            action.payload.cart.forEach(items => {
+                newState.cart = items
+            })
+            return newState
         
         default:
             return state;
