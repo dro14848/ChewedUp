@@ -12,7 +12,12 @@ const getCart = (cart) => ({
 })
 
 //THUNKS
-
+export const getCartThunk = (id) => async (dispatch) => {
+    const response = await fetch (`/api/cart/${id}`)
+    const data = await response.json()
+    dispatch(getCart(data))
+    return data
+}
 
 
 
