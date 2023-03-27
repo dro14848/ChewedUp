@@ -50,4 +50,30 @@ def addItem(cart_id, product_id):
     
     cart.products.append(product)
     db.session.commit()
-    return {"sucess": "Item added to cart"}
+    return {"success": "Item added to cart"}
+
+# Delete item in cart
+@cart_routes.route('/<int:id>', methods=["DELETE"])
+def deleteItem(id):
+    body_data = request.get_json()
+    product_id = body_data.get('id')
+   
+    cart = Cart.query.get(id)
+    if not cart:
+        return {'message': 'Cart not found'}, 404
+    
+    for product in cart.products:
+        if product.id == product_id:
+            cart.products.remove(product)
+            break
+    
+    db.session.add(cart)
+    db.session.commit()
+
+    cart_obj = cart.to_dict()
+    cart_obj['products']= []
+    for product in cart.products:
+        product_obj = product.to_dict()
+        cart_obj['products'].append(product_obj)
+
+    return cart_obj

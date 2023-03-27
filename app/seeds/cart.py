@@ -7,7 +7,7 @@ from random import choice
 def seed_cart():
     products = Product.query.all()
 
-    cart1 = Cart(user_id=1, quantity=1, products=[choice(products)])
+    cart1 = Cart(user_id=1, quantity=2, products=[choice(products)])
     cart2 = Cart(user_id=2, quantity=1, products=[choice(products)])
     cart3 = Cart(user_id=3, quantity=1, products=[choice(products)])
 

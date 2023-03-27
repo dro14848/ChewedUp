@@ -26,7 +26,7 @@ const initialState = {
     cart:{}
 }
 
-//Recuer
+//Reducer
 export const cartReducer = (state = initialState, action) => {
     let newState;
     switch(action.type){

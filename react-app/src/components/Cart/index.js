@@ -23,11 +23,15 @@ function Cart() {
     return (
         <div className='MainCartDiv'>
             <h1>Cart</h1>
-            {items.cart?.map(({id, name, price }) => {
+            {items.cart?.map(({id, name, price}) => {
                 return (
                     <div key={id}>
                     <h2>{name}</h2>
+                    <p>Quantity: {items.quantity}</p>
                     <p>${price}</p>
+                    <div className='delteButtonDiv'>
+                        <button className='deleteItemButton'>Delete Item</button>
+                    </div>
                     </div>
                 
                 )
