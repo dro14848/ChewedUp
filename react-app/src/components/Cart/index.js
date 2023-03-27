@@ -29,7 +29,7 @@ function Cart() {
                     <h2>{name}</h2>
                     <p>Quantity: {items.quantity}</p>
                     <p>${price}</p>
-                    <div className='delteButtonDiv'>
+                    <div className='deleteButtonDiv'>
                         <button className='deleteItemButton'>Delete Item</button>
                     </div>
                     </div>

@@ -38,7 +38,7 @@ export const getCartThunk = (id) => async (dispatch) => {
 }
 
 export const addItemThunk = (cartId, productId) => async (dispatch) => {
-    const response = await fetch(`/api/cart/${cartId}/product/${productId}`, {
+    const response = await fetch(`/api/cart/${cartId}/products/${productId}`, {
         method: 'POST',
         headers: {
             "Content-Type": "application/json"
@@ -88,7 +88,11 @@ export const cartReducer = (state = initialState, action) => {
             return newState
         
         case ADD_ITEM:
-
+            newState = {...state}
+            let newStateCopy = {...newState.Cart}
+            newStateCopy[action.payload.id] = action.payload
+            newState.Cart = newStateCopy
+            return newState
 
         case DELETE_ITEM:
 
