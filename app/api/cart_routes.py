@@ -9,11 +9,9 @@ cart_routes = Blueprint('cart', __name__)
 @cart_routes.route('/<int:id>')
 def readCart(id):
     carts = db.session.query(Cart).filter(Cart.user_id == id).all()
-    # cartlog = cart.to_dict()
     cartItems = []
     for items in carts:
         allProd = []
-        # print("CART LOOP", items)
         for product in items.products:
             productsObj = product.to_dict()
             allProd.append(productsObj)
@@ -24,8 +22,6 @@ def readCart(id):
     cartResult = {
         "cart": cartItems
     }
-    # print("CART ============", cartObj)
-    # print("CART ITEMS +++++++++++++++++", cartItems)
 
     return cartResult
 
@@ -85,11 +81,9 @@ def clearCart():
     user_id = current_user.id
     cart_id = request.get_json()
     id = cart_id.get('id')
-    # print( "CARRT++++++++++++++", cart_id)
     carts = Cart.query.filter(Cart.id == user_id).all()
 
     for cart in carts:
-        print("CART ===============", carts)
         cart.products.clear()
         db.session.commit()
     return {"Cart Cleared": user_id}
