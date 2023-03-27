@@ -77,3 +77,19 @@ def deleteItem(id):
         cart_obj['products'].append(product_obj)
 
     return cart_obj
+
+
+# Clear Cart
+@cart_routes.route('/deletecart', methods=["PUT"])
+def clearCart():
+    user_id = current_user.id
+    cart_id = request.get_json()
+    id = cart_id.get('id')
+    # print( "CARRT++++++++++++++", cart_id)
+    carts = Cart.query.filter(Cart.id == user_id).all()
+
+    for cart in carts:
+        print("CART ===============", carts)
+        cart.products.clear()
+        db.session.commit()
+    return {"Cart Cleared": user_id}
