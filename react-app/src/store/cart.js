@@ -23,7 +23,7 @@ export const getCartThunk = (id) => async (dispatch) => {
 
 //initialState
 const initialState = {
-    Cart:{}
+    cart:{}
 }
 
 //Recuer

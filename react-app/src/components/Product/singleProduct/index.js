@@ -23,6 +23,9 @@ function SingleProduct() {
             <div className="productDetails">
                 <h2>{product.name}</h2>
                 <h2>{product.price}</h2>
+                <div className="addToCart">
+                    <button className="addToCartButton">Add to Cart</button>
+                </div>
 
             </div>
             <div className="prodImg">

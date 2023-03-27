@@ -37,3 +37,17 @@ def cart_creation():
     db.session.add(new_cart)
     db.session.commit()
     return new_cart.to_dict()
+
+# Add item to cart
+@cart_routes.route('/<int:cart_id>/products/<int:product_id>', methods=['POST'])
+def addItem(cart_id, product_id):
+    cart = Cart.query.get(cart_id)
+    product = Product.query.get(product_id)
+
+    for items in cart.products:
+        if items.id == product.id:
+            return {"error": "Item is already in cart, please modify quantity"}, 400
+    
+    cart.products.append(product)
+    db.session.commit()
+    return {"sucess": "Item added to cart"}
