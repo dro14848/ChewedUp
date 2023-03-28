@@ -1,9 +1,9 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useParams, useHistory } from 'react-router-dom'
 import { useDispatch, useSelector } from "react-redux";
 import './singleProduct.css'
 import { loadSingleProdThunk } from "../../../store/products";
-import { addItemThunk } from "../../../store/cart";
+import { addItemThunk} from "../../../store/cart";
 
 function SingleProduct() {
     const dispatch = useDispatch()
@@ -11,6 +11,8 @@ function SingleProduct() {
     const history = useHistory()
     const product = useSelector(state => state.productReducer.singleProduct)
     const user = useSelector(state => state.session.user)
+
+
 
         useEffect(() => {
             dispatch(loadSingleProdThunk(id.id))

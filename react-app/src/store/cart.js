@@ -53,7 +53,7 @@ export const addItemThunk = (cartId, productId) => async (dispatch) => {
     return response
 }
 
-export const deleteItemThunk = (userId,productid) => async (dispatch) => {
+export const deleteItemThunk = (userId, productid) => async (dispatch) => {
     const response = await fetch (`/api/cart/${userId}`, {
         method: 'DELETE',
         headers: {
