@@ -54,12 +54,14 @@ export const addItemThunk = (cartId, productId) => async (dispatch) => {
 }
 
 export const deleteItemThunk = (userId, productid) => async (dispatch) => {
+    console.log("PRODUCT ID", productid)
+    console.log("USER ID", userId)
     const response = await fetch (`/api/cart/${userId}`, {
         method: 'DELETE',
         headers: {
             "Content-Type": "application/json"
         },
-        body: JSON.stringify(productid)
+        body: JSON.stringify({id: productid})
     })
     
     if (response.ok) {
@@ -89,13 +91,15 @@ export const cartReducer = (state = initialState, action) => {
         
         case ADD_ITEM:
             newState = {...state}
-            let newStateCopy = {...newState.Cart}
+            let newStateCopy = {...newState.cart}
             newStateCopy[action.payload.id] = action.payload
-            newState.Cart = newStateCopy
+            newState.cart = newStateCopy
             return newState
 
         case DELETE_ITEM:
-
+            newState = { ...state}
+            newState.cart = action.payload
+            return newState
 
         case CLEAR_CART:
 

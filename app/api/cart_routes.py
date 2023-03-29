@@ -52,18 +52,15 @@ def addItem(cart_id, product_id):
 @cart_routes.route('/<int:id>', methods=["DELETE"])
 def deleteItem(id):
     body_data = request.get_json()
-    product_id = body_data.get('id')
-   
     cart = Cart.query.get(id)
     if not cart:
         return {'message': 'Cart not found'}, 404
     
     for product in cart.products:
-        if product.id == product_id:
+        if product.id == body_data['id']:
             cart.products.remove(product)
-            break
     
-    db.session.add(cart)
+    # db.session.add(cart)
     db.session.commit()
 
     cart_obj = cart.to_dict()
@@ -72,7 +69,7 @@ def deleteItem(id):
         product_obj = product.to_dict()
         cart_obj['products'].append(product_obj)
 
-    return cart_obj
+    return jsonify(cart_obj)
 
 
 # Clear Cart

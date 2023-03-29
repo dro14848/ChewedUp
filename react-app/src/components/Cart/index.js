@@ -8,7 +8,8 @@ function Cart() {
     const history = useHistory()
     const user = useSelector(state => state.session.user)
     const items = useSelector(state => state.cartReducer.cart)
-    console.log("CART ITEMS", items)
+    const itemsArr = Object.values(items || [])
+    // console.log("CART ITEMS", itemsArr)
     const [itemCount, setItemCount] = useState(0)
     const [totalPrice, setTotalPrice] = useState(0.00)
 
@@ -18,8 +19,10 @@ function Cart() {
     }
 
     useEffect(() => {
-        dispatch(getCartThunk(user?.id))
-    }, [dispatch])
+        if(user){
+            dispatch(getCartThunk(user.id))
+        }
+    }, [dispatch, user])
 
     useEffect(() => {
         if (items) {
@@ -32,23 +35,37 @@ function Cart() {
           setItemCount(itemCount)
           setTotalPrice(price)
         }
-      }, [items])
-
-    const handleDeleteItem = (itemId, itemPrice) => {
+      }, [items, items.cart?.length])
+      
+      
+      const handleDeleteItem = (itemId, itemPrice) => {
+        console.log('ITEM ID THUNK', itemId);
         dispatch(deleteItemThunk(user.id, itemId))
-        setItemCount(prevCount => prevCount - 1)
-        setTotalPrice(prevPrice => prevPrice - itemPrice)
-      }
+            .then(() => {
+                setItemCount(prevCount => prevCount - 1);
+                setTotalPrice(prevPrice => prevPrice - itemPrice);
+                dispatch(getCartThunk(user.id));
+            })
+            .catch(error => {
+                console.log('Error deleting item:', error);
+            });
+    }
 
+        if(!items) {
+            return <h1>THERE have no items in your cart</h1>
+        }
+
+        if (!items || items.cart?.length === 0){
+            return <p>You have no items in your cart</p>
+        }
 
     return (
         <div className='MainCartDiv'>
-            <h1>Cart</h1>
+            <h1>Cart ({itemCount})</h1>
             {items.cart?.map(({id, name, price}) => {
                 return (
                     <div key={id}>
                     <h2>{name}</h2>
-                    <p>Quantity: {items.quantity}</p>
                     <p>${price}</p>
                     <div className='deleteButtonDiv'>
                         <button className='deleteItemButton' onClick={() => handleDeleteItem(id, price)}>Delete Item</button>
@@ -58,7 +75,7 @@ function Cart() {
                 )
             })}
             <div className='totalpricediv'>
-                <p>Total: </p>
+                <p>Total:${totalPrice.toFixed(2)} </p>
             </div>
             <div className='Checkout'>
                 <button className='checkoutButton' >Checkout</button>
@@ -68,3 +85,5 @@ function Cart() {
 }
 
 export default Cart
+
+  
