@@ -1,5 +1,5 @@
 from flask import Blueprint, jsonify, request
-from app.models import db, Product, ProductImages
+from app.models import db, Product, ProductImages, Review
 
 
 product_routes = Blueprint('products', __name__)
@@ -21,7 +21,10 @@ def allProducts():
 def singleProduct(id):
     product = Product.query.get(id)
     images = ProductImages.query.get(id)
+    # reviews = Review.query.get(id)
+    reviews_dict = {'reviews': [reviews.to_dict() for reviews in product.reviews]}
     image_dict = images.to_dict()
     product_dict = product.to_dict()
     product_dict.update(image_dict)
+    product_dict.update(reviews_dict)
     return product_dict

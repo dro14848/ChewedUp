@@ -8,6 +8,7 @@ import configureStore from "./store";
 import * as sessionActions from "./store/session";
 import * as productActions from './store/products'
 import * as cartActions from './store/cart'
+import * as reviewActions from './store/reviews'
 import App from "./App";
 
 import "./index.css";
@@ -19,6 +20,7 @@ if (process.env.NODE_ENV !== "production") {
 	window.sessionActions = sessionActions;
 	window.productActions = productActions;
 	window.cartActions = cartActions;
+	window.reviewActions = reviewActions
 }
 
 // Wrap the application with the Modal provider and render the Modal component

@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from "react-redux";
 import './singleProduct.css'
 import { loadSingleProdThunk } from "../../../store/products";
 import { addItemThunk} from "../../../store/cart";
+import  {ProductReviews } from '../../Reviews'
 
 function SingleProduct() {
     const dispatch = useDispatch()
@@ -41,6 +42,9 @@ function SingleProduct() {
                 </div>
             </div>
 
+         <div>
+            <ProductReviews />
+         </div>
         </div>
     )
 }
