@@ -5,14 +5,23 @@ import './singleProduct.css'
 import { loadSingleProdThunk } from "../../../store/products";
 import { addItemThunk} from "../../../store/cart";
 import  {ProductReviews } from '../../Reviews'
+import { AddReview } from "../../Reviews/AddReview";
+import OpenModalButton from "../../OpenModalButton"
+import { useModal } from "../../../context/Modal";
 
 function SingleProduct() {
     const dispatch = useDispatch()
     const id = useParams()
     const history = useHistory()
+    const {closeModal} = useModal()
     const product = useSelector(state => state.productReducer.singleProduct)
     const user = useSelector(state => state.session.user)
+    const reviews = useSelector(state => state.reviewsReducer.productReviews)
+    const reviewsArr = Object.values(reviews)
 
+
+
+    const userReview = reviewsArr.find(review => review.userId === user?.id);
 
 
         useEffect(() => {
@@ -41,6 +50,14 @@ function SingleProduct() {
                     <p>{product.description}</p>
                 </div>
             </div>
+            {!userReview && (
+                    <div className="add-review">
+                        <OpenModalButton
+                            modalComponent={<AddReview />}
+                            buttonText={"ADD NEW REVIEW"}
+                        />
+                    </div>
+                )}
 
          <div>
             <ProductReviews />

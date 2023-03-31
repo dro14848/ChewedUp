@@ -1,9 +1,21 @@
 const ALL_REVIEWS = 'reviews/allReviews'
+const ADD_REVIEW = 'reviews/addReview'
+const DELETE_REVIEW = 'reviews/deleteReview'
 
 
 const allReviews = (reviews) => ({
     type: ALL_REVIEWS,
     payload: reviews
+})
+
+const addReview = (review) => ({
+    type: ADD_REVIEW,
+    payload: review
+})
+
+const deleteReview = (reviewId) => ({
+    type: DELETE_REVIEW,
+    payload: reviewId
 })
 
 
@@ -13,6 +25,30 @@ export const allReviewsThunk = (productID) => async (dispatch) => {
     const data = await response.json()
     console.log("DATA", data)
     dispatch(allReviews(data))
+}
+
+export const addReviewThunk = (id, review) =>  async (dispatch) => {
+      const response = await fetch(`/api/products/${id}/reviews`, {
+        method: 'POST',
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+            user_id: review.userId,
+            product_id: id,
+            review: review.review,
+            rating: review.rating
+        })
+      })
+
+      if (response.ok) {
+        const data = await response.json();
+        dispatch(addReview(data));
+        return data;
+      } else {
+        throw response; // Throw the response object to handle errors in the catch block
+      }
+    
 }
 
 
@@ -35,6 +71,13 @@ export const reviewsReducer = (state = initialState, action) => {
                 reviewsCopy[review.id] = review
             })
             newState.productReviews = reviewsCopy
+            return newState
+        
+        case ADD_REVIEW:
+            newState = { ...state}
+            let reviewCopy = { ...newState.productReviews}
+            reviewCopy[action.payload.id] = action.payload
+            newState.allProducts = reviewCopy
             return newState
 
         default:

@@ -10,7 +10,8 @@ export const ProductReviews = () => {
     const reviews = useSelector(state => state.reviewsReducer.productReviews)
     const reviewsObj = Object.values(reviews)
     const ID = parseInt(id.id)
-    console.log('REVIEWS', reviews)
+   
+
     useEffect(() => {
         dispatch(allReviewsThunk(ID))
     }, [dispatch])

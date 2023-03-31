@@ -39,7 +39,6 @@ function Cart() {
       
       
       const handleDeleteItem = (itemId, itemPrice) => {
-        console.log('ITEM ID THUNK', itemId);
         dispatch(deleteItemThunk(user.id, itemId))
             .then(() => {
                 setItemCount(prevCount => prevCount - 1);
@@ -50,6 +49,8 @@ function Cart() {
                 console.log('Error deleting item:', error);
             });
     }
+
+
 
         if(!items) {
             return <h1>THERE have no items in your cart</h1>
