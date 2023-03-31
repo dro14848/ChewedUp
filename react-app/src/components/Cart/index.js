@@ -1,7 +1,7 @@
 import {useEffect, useState} from 'react'
 import {useDispatch, useSelector} from 'react-redux'
 import {useHistory} from 'react-router-dom'
-import { getCartThunk, deleteItemThunk } from '../../store/cart'
+import { getCartThunk, deleteItemThunk, clearCartThunk } from '../../store/cart'
 
 function Cart() {
     const dispatch = useDispatch()
@@ -9,7 +9,6 @@ function Cart() {
     const user = useSelector(state => state.session.user)
     const items = useSelector(state => state.cartReducer.cart)
     const itemsArr = Object.values(items || [])
-    // console.log("CART ITEMS", itemsArr)
     const [itemCount, setItemCount] = useState(0)
     const [totalPrice, setTotalPrice] = useState(0.00)
 

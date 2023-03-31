@@ -71,6 +71,39 @@ export const deleteItemThunk = (userId, productid) => async (dispatch) => {
     }
 }
 
+export const createCartThunk = (userId) => async (dispatch) => {
+    const response = await fetch(`/api/cart/`, {
+        method: 'POST',
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify(userId)
+    })
+
+    if (response.ok) {
+        const data = await response.json()
+        dispatch(createCart(data))
+    }
+
+    return response
+}
+
+export const clearCartThunk = (cartId) => async (dispatch) => {
+    const response = await fetch (`/api/cart/deletecart`, {
+        method:'PUT',
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify(cartId)
+    })
+
+    if (response.ok){
+        const data = await response.json()
+        dispatch(clearCart(data))
+        return data
+    }
+}
+
 //initialState
 const initialState = {
     cart:{}
@@ -102,7 +135,20 @@ export const cartReducer = (state = initialState, action) => {
             return newState
 
         case CLEAR_CART:
+            return {
+                ...state,
+                cart: {
+                    ...state.cart,
+                    ...action.payload
+                }
+            }
 
+        case CREATE_CART:
+            newState = {...state}
+            let newCart = {...newState.cart}
+            newCart[action.payload.id] = action.payload
+            newState.cart = newCart
+            return newState
 
         default:
             return state;
