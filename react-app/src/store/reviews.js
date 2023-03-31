@@ -45,12 +45,23 @@ export const addReviewThunk = (id, review) =>  async (dispatch) => {
         const data = await response.json();
         dispatch(addReview(data));
         return data;
-      } else {
-        throw response; // Throw the response object to handle errors in the catch block
       }
-    
 }
 
+export const deleteReviewThunk = (id) => async (dispatch) => {
+    const response = await fetch(`/api/reviews/${id}`, {
+        method: 'DELETE',
+        headers: {
+            "Content-Type": "application/json"
+        },
+    })
+
+    if (response.ok) {
+        const data = await response.json()
+        dispatch(deleteReview(data))
+        return data
+    }
+}
 
 // INITIAL STATE
 
@@ -79,7 +90,13 @@ export const reviewsReducer = (state = initialState, action) => {
             reviewCopy[action.payload.id] = action.payload
             newState.allProducts = reviewCopy
             return newState
-
+        
+        case DELETE_REVIEW:
+            newState = { ...state}
+            let reviewCopyA = {...newState.productReviews}
+            delete reviewCopyA[action.payload.id]
+            newState.productReviews = reviewCopyA
+            return newState
         default:
             return state
     }
