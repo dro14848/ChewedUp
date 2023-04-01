@@ -6,13 +6,22 @@ def seed_prodImages():
     products = Product.query.all()
     for product in products:
         if product.id == 1:
-            image_url= 'https://image.chewy.com/is/image/catalog/53259_MAIN._AC_SS108_V1602320474_.jpg'
+            image_url= 'https://image.chewy.com/is/image/catalog/68068_MAIN._AC_SL1200_V1628101898_.jpg'
         elif product.id == 2:
-            image_url ='https://image.chewy.com/is/image/catalog/53238_MAIN._AC_SS600_V1602337265_.jpg'
+            image_url ='https://image.chewy.com/is/image/catalog/53235_MAIN._AC_SL1200_V1658683388_.jpg'
         elif product.id == 3:
-            image_url ='https://image.chewy.com/is/image/catalog/53352_MAIN._AC_SS232_V1534449202_.jpg'
+            image_url ='https://image.chewy.com/is/image/catalog/150483_MAIN._AC_SL1200_V1545256686_.jpg'
         elif product.id == 4:
-            image_url ='https://image.chewy.com/is/image/catalog/71968_MAIN._AC_SY232_V1612404735_.jpg'
+            image_url ='https://image.chewy.com/is/image/catalog/80742_MAIN._AC_SL1200_V1633021944_.jpg'
+        elif product.id == 5:
+            image_url ='https://image.chewy.com/is/image/catalog/150514_MAIN._AC_SL1200_V1545253327_.jpg'
+        elif product.id == 6:
+            image_url ='https://image.chewy.com/is/image/catalog/62766_MAIN._AC_SL1200_V1588689687_.jpg'
+        elif product.id == 7:
+            image_url ='https://image.chewy.com/is/image/catalog/53325_MAIN._AC_SL600_V1534449176_.jpg'
+        # elif product.id == :
+        #     image_url =''
+        
         else:
             continue
         product_image = ProductImages(
