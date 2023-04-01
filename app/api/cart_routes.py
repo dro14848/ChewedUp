@@ -12,8 +12,14 @@ def readCart(id):
     cartItems = []
     for items in carts:
         allProd = []
+        testvar = items.products
+        print("ITEMS", testvar)
         for product in items.products:
             productsObj = product.to_dict()
+            print("OBJ", productsObj)
+            productsObj['productimages'] = []
+            for img in product.productimages:
+                productsObj['productimages'].append(img.to_dict())
             allProd.append(productsObj)
 
     cartObj = items.to_dict()

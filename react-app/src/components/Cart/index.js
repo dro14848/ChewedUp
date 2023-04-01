@@ -62,11 +62,14 @@ function Cart() {
     return (
         <div className='MainCartDiv'>
             <h1>Cart ({itemCount})</h1>
-            {items.cart?.map(({id, name, price}) => {
+            {items.cart?.map(({id, name, price, productimages}) => {
                 return (
                     <div key={id}>
                     <h2>{name}</h2>
                     <p>${price}</p>
+                    {productimages?.map(image => (
+              <img className="cart-image" src={image.image} alt="no image" key={image.id} />
+            ))}
                     <div className='deleteButtonDiv'>
                         <button className='deleteItemButton' onClick={() => handleDeleteItem(id, price)}>Delete Item</button>
                     </div>
