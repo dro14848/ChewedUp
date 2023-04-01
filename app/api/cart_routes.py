@@ -1,5 +1,5 @@
 from flask import Blueprint, jsonify, request
-from app.models import db, Product, Cart
+from app.models import db, Product, Cart, User
 from sqlalchemy.orm import joinedload, session
 from flask_login import login_required, current_user
 
@@ -35,7 +35,10 @@ def readCart(id):
 @cart_routes.route('/', methods=["POST"])
 def cart_creation():
     user = current_user
-    new_cart = Cart(user_id == user.id)
+    body_data = request.get_json()
+    new_cart = Cart(user_id = user.id)
+    
+
     db.session.add(new_cart)
     db.session.commit()
     return new_cart.to_dict()

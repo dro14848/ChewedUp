@@ -113,7 +113,6 @@ const initialState = {
 export const cartReducer = (state = initialState, action) => {
     let newState;
     switch(action.type){
-        case CREATE_CART:
 
         case GET_CART:
             newState = {...state}
