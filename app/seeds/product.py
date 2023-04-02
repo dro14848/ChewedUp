@@ -38,7 +38,47 @@ def seed_products():
             disclaimer= "Every dog plays differently and, since not all toys are created equal, it’s always best to keep a close watch on your pup in case things get ruff. Supervised play will help toys last longer and most importantly keep your pal safe.", 
             price="9.95", type="chew"
         ),
+        Product(
+            name ="Sensory Ball Tough Dog Chew Toy", description="The Sensory Ball Dog Toy stimulates all of your pup’s senses for hours of fun-filled play. This toy contains a bell and squeaker for sound, beefy aroma and flavor for scent and taste, multiple textures for touch and bright colors for sight.",
+            disclaimer= "Every dog plays differently and, since not all toys are created equal, it’s always best to keep a close watch on your pup in case things get ruff. Supervised play will help toys last longer and most importantly keep your pal safe.", 
+            price="10.99", type="chew"
+        ),
+        Product(
+            name ="Spring Sunflower Plush Squeaky Dog Toy", description="Spring is all about a fresh start, so start your dog’s season off with this super cute, sunflower-and-bumblebee plush toy, from Frisco by Chewy! Your pooch’s playtime is about to be pollinated with all sorts of fun activities from their new friend.",
+            disclaimer= "Every dog plays differently and, since not all toys are created equal, it’s always best to keep a close watch on your pup in case things get ruff. Supervised play will help toys last longer and most importantly keep your pal safe.", 
+            price="10.99", type="chew"
+        ),
+        Product(
+            name ="Colorful Ball Knot Rope Dog Toy", description="Your playful pup will have a ball with this chunky, knotted rope toy! In the middle, there’s a big ball of tightly knotted rope your dog will love to chomp on, with six other ropes sticking out in all directions.",
+            disclaimer= "Every dog plays differently and, since not all toys are created equal, it’s always best to keep a close watch on your pup in case things get ruff. Supervised play will help toys last longer and most importantly keep your pal safe.", 
+            price="10.99", type="chew"
+        ),
+        Product(
+            name ="Assorted Medium to Large Rope Dog Toys", description="Watch as your pup’s tail wags with excitement over these Otterly Pets Assorted Medium to Large Rope Dog Toys! Each set comes with an assortment five dog rope toys.",
+            disclaimer= "Every dog plays differently and, since not all toys are created equal, it’s always best to keep a close watch on your pup in case things get ruff. Supervised play will help toys last longer and most importantly keep your pal safe.", 
+            price="10.99", type="chew"
+        ),
+        Product(
+            name ="Nuts for Knots Ball Dog Toy", description="Is it a toy or a task? Why not both?! Gnaw-happy pups will love sinking their teeth in the Multipet Nuts for Knots Ball Dog Toy. Multicolored cotton rope is twisted and knotted into a fun ball that's just as much fun to fetch as it is to chew.",
+            disclaimer= "Every dog plays differently and, since not all toys are created equal, it’s always best to keep a close watch on your pup in case things get ruff. Supervised play will help toys last longer and most importantly keep your pal safe.", 
+            price="10.99", type="chew"
+        ),
+        Product(
+            name ="Knotted Rope Tug Dog Toy", description="When your dog is a fan of tug, fetch, and chewing, then the Pacific Pups Rescue Rope Tug Dog Toy is going to be a welcome addition to her toy bin. This rope toy is designed for large and extra-large dogs.",
+            disclaimer= "Every dog plays differently and, since not all toys are created equal, it’s always best to keep a close watch on your pup in case things get ruff. Supervised play will help toys last longer and most importantly keep your pal safe.", 
+            price="10.99", type="chew"
+        ),
+        Product(
+            name =" Puppy Chew Chicken, Lamb & Apple Flavored Puppy Chew Toy", description="Help your newest furry family member get off on the right paw with Nylabone’s Puppy Chew Chicken, Lamb & Apple Toys and Treats! This toy and treat trio is made in the USA and designed to encourage healthy chewing habits right from the beginning",
+            disclaimer= "Every dog plays differently and, since not all toys are created equal, it’s always best to keep a close watch on your pup in case things get ruff. Supervised play will help toys last longer and most importantly keep your pal safe.", 
+            price="10.99", type="chew"
+        ),
         # Product(
+        #     name ="", description="",
+        #     disclaimer= "Every dog plays differently and, since not all toys are created equal, it’s always best to keep a close watch on your pup in case things get ruff. Supervised play will help toys last longer and most importantly keep your pal safe.", 
+        #     price="10.99", type="chew"
+        # ),
+        #    Product(
         #     name ="", description="",
         #     disclaimer= "Every dog plays differently and, since not all toys are created equal, it’s always best to keep a close watch on your pup in case things get ruff. Supervised play will help toys last longer and most importantly keep your pal safe.", 
         #     price="10.99", type="chew"

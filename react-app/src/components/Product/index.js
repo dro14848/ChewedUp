@@ -2,7 +2,7 @@ import {useEffect} from 'react'
 import {useDispatch, useSelector} from 'react-redux'
 import { loadProductsThunk } from '../../store/products'
 import { NavLink, Switch, Route } from 'react-router-dom'
-
+import './product.css'
 
 function AllProducts (){
     const dispatch = useDispatch()
@@ -24,6 +24,7 @@ function AllProducts (){
                         return (
                             <div>
                     <img className='preview-image' src={pic?.image} alt="image not found"></img>
+                        <p className='itemName'>{name}</p>
                         <p className="nameprice"> $ {price}</p>
                         </div>)})}
                     </div>

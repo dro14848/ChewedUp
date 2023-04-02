@@ -24,6 +24,7 @@ function LoginFormModal() {
   return (
     <>
       <h1>Log In</h1>
+      <div>
       <form onSubmit={handleSubmit}>
         <ul>
           {errors.map((error, idx) => (
@@ -50,6 +51,8 @@ function LoginFormModal() {
         </label>
         <button type="submit">Log In</button>
       </form>
+        <button className="submit-button"onClick={() => dispatch(login("demo@aa.io", "password")).then(() => closeModal())}>Demo User</button>
+      </div>
     </>
   );
 }

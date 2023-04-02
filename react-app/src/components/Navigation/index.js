@@ -4,6 +4,7 @@ import { useSelector } from 'react-redux';
 import ProfileButton from './ProfileButton';
 import Cart from '../Cart';
 import './Navigation.css';
+import CartIcon from '../icons/cart';
 
 function Navigation({ isLoaded }){
 	const sessionUser = useSelector(state => state.session.user);
@@ -14,7 +15,7 @@ function Navigation({ isLoaded }){
 				<NavLink exact to="/">Home</NavLink>
 			</li>
 			<li>
-				<NavLink exact to='/cart'>Cart</NavLink>
+				<NavLink exact to='/cart'><CartIcon/></NavLink>
 			</li>
 			{isLoaded && (
 				<li>

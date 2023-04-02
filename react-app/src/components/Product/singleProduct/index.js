@@ -43,7 +43,11 @@ function SingleProduct() {
                     <button className="add-to-cart"
                     onClick={() => dispatch(addItemThunk( user.id,id.id)).then(() => history.push('/cart'))}
                     > Add To Cart </button>
-                    ): null }
+                    ): <div className="logInAddCart">
+                        <button
+                        onClick={() => history.push('/login')}
+                        >Add to Cart</button>
+                         </div> }
                 </div>
 
             </div>
@@ -53,6 +57,8 @@ function SingleProduct() {
                     return <img src={pic.image} alt="image not found"></img>
                 })}
                     <p>{product.singleProduct.description}</p>
+                    <h6>DISCLAIMER</h6>
+                    <p>{product.singleProduct.disclaimer}</p>
                 </div>
             </div>
             {!userHasReview && (

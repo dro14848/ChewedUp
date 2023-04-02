@@ -2,7 +2,7 @@ import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 import { allReviewsThunk, deleteReviewThunk } from "../../store/reviews";
-
+import './review.css'
 
 export const ProductReviews = () => {
     const dispatch = useDispatch()
@@ -24,8 +24,8 @@ export const ProductReviews = () => {
                 {reviewsObj.map(({ id, review, rating, user_id}) => {
                     return (
                         <div key={id} className="reviewId">
-                            <p>Rating: {rating}</p>
-                            <p>{review}</p>
+                            <p className="reviewRating">Rating: {rating} / 5</p>
+                            <p className="reviewbody">{review}</p>
                             {user_id === userId && (
                   <button
                   className="delete-review-button"

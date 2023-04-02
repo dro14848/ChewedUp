@@ -1,0 +1,37 @@
+.products-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    background-color: #F5F5F5;
+    padding: 1rem;
+}
+
+.productDetails {
+    margin-top: 1rem;
+    text-align: center;
+    border: 1px solid #ddd;
+    border-radius: 0.5rem;
+    padding: 1rem;
+    background-color: #fff;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+.preview-image {
+    height: 250px;
+    width: 250px;
+    object-fit: cover;
+    border-radius: 0.5rem;
+    margin-bottom: 1rem;
+    cursor: pointer;
+}
+
+.nameprice {
+    font-weight: bold;
+    font-size: 1.2rem;
+    margin-top: 0.5rem;
+}
+.itemName {
+    font-weight: bold;
+    font-size: 1.2rem;
+    margin-top: 0.5rem;
+}

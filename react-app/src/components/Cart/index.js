@@ -12,7 +12,7 @@ function Cart() {
     const [itemCount, setItemCount] = useState(0)
     const [totalPrice, setTotalPrice] = useState(0.00)
 
-
+    console.log('items', items)
     if (!user){
         history.push('/login')
     }
@@ -59,6 +59,13 @@ function Cart() {
             return <p>You have no items in your cart</p>
         }
 
+        const handleCheckout = async () => {
+            dispatch(clearCartThunk(items.id))
+            .then(() => {
+                history.push('/order')
+            })
+        }
+
     return (
         <div className='MainCartDiv'>
             <h1>Cart ({itemCount})</h1>
@@ -81,7 +88,7 @@ function Cart() {
                 <p>Total:${totalPrice.toFixed(2)} </p>
             </div>
             <div className='Checkout'>
-                <button className='checkoutButton' >Checkout</button>
+                <button className='checkoutButton' onClick={handleCheckout}>Checkout</button>
             </div>
         </div>
     )

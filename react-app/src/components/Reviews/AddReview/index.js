@@ -1,9 +1,9 @@
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { useParams } from "react-router-dom";
 import { useModal } from "../../../context/Modal";
 import { addReviewThunk, allReviewsThunk } from "../../../store/reviews";
 import { loadSingleProdThunk } from "../../../store/products";
+import './addreview.css'
 
 export const AddReview = () => {
     const dispatch = useDispatch()

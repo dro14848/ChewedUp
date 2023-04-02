@@ -8,6 +8,7 @@ import Navigation from "./components/Navigation";
 import AllProducts from "./components/Product";
 import SingleProduct from "./components/Product/singleProduct";
 import Cart from "./components/Cart";
+import Order from "./components/Orders";
 
 function App() {
   const dispatch = useDispatch();
@@ -35,6 +36,9 @@ function App() {
           </Route>
           <Route exact path='/cart'>
           <Cart />
+          </Route>
+          <Route exact path='/order'>
+            <Order />
           </Route>
         </Switch>
       )}

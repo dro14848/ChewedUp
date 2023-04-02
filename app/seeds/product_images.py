@@ -19,9 +19,20 @@ def seed_prodImages():
             image_url ='https://image.chewy.com/is/image/catalog/62766_MAIN._AC_SL1200_V1588689687_.jpg'
         elif product.id == 7:
             image_url ='https://image.chewy.com/is/image/catalog/53325_MAIN._AC_SL600_V1534449176_.jpg'
-        # elif product.id == :
-        #     image_url =''
-        
+        elif product.id == 8:
+            image_url ='https://image.chewy.com/is/image/catalog/90246_MAIN._AC_SL1200_V1527093482_.jpg'
+        elif product.id == 9:
+            image_url ='https://image.chewy.com/is/image/catalog/546766_MAIN._AC_SL1200_V1670608494_.jpg'
+        elif product.id == 10:
+            image_url ='https://image.chewy.com/is/image/catalog/242159_MAIN._AC_SL1200_V1603373495_.jpg'
+        elif product.id == 11:
+            image_url ='https://image.chewy.com/is/image/catalog/145541_MAIN._AC_SL1200_V1630456889_.jpg'
+        elif product.id == 12:
+            image_url ='https://image.chewy.com/is/image/catalog/68144_PT1._AC_SL1200_V1530911461_.jpg'
+        elif product.id == 13:
+            image_url ='https://image.chewy.com/is/image/catalog/532310_MAIN._AC_SL1200_V1657658630_.jpg'
+        elif product.id == 14:
+            image_url ='https://image.chewy.com/is/image/catalog/161311_MAIN._AC_SL1200_V1677534736_.jpg'
         else:
             continue
         product_image = ProductImages(
