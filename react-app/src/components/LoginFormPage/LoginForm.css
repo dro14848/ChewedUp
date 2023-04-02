@@ -1,0 +1,63 @@
+.LoginDiv {
+    width: 50%;
+    margin: 0 auto;
+    text-align: center;
+    margin-top: 50px;
+  }
+  
+  .logInTitle {
+    font-size: 36px;
+    margin-bottom: 20px;
+  }
+  
+  .NewUserSignUp {
+    width: 50%;
+    margin: 0 auto;
+    text-align: center;
+    margin-top: 20px;
+  }
+  
+  .signupTitle {
+    font-size: 28px;
+    margin-bottom: 20px;
+  }
+  
+  .SignUp {
+    margin-top: 20px;
+    background-color: #FFA07A;
+    color: white;
+    border-radius: 4px;
+    font-size: 16px;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+  }
+  
+  button[type="submit"] {
+    margin-top: 20px;
+    background-color: #FFA07A;
+    color: white;
+    border-radius: 4px;
+    font-size: 16px;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+  }
+  
+  button[type="submit"]:hover {
+    background-color: #FF8C6F;
+  }
+  
+  ul {
+    margin-top: 20px;
+    color: red;
+    list-style-type: none;
+  }
+  
+  li {
+    margin-bottom: 10px;
+    font-size: 16px;
+  }
+  

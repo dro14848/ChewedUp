@@ -2,6 +2,9 @@ import React, { useState } from "react";
 import { login } from "../../store/session";
 import { useDispatch, useSelector } from "react-redux";
 import { Redirect } from "react-router-dom";
+import SignupFormModal from "../SignupFormModal";
+import OpenModalButton from "../OpenModalButton"
+import { useModal } from "../../context/Modal";
 import './LoginForm.css';
 
 function LoginFormPage() {
@@ -10,7 +13,8 @@ function LoginFormPage() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [errors, setErrors] = useState([]);
-
+  const {closeModal} = useModal()
+  
   if (sessionUser) return <Redirect to="/" />;
 
   const handleSubmit = async (e) => {
@@ -23,12 +27,13 @@ function LoginFormPage() {
 
   return (
     <>
-      <h1>Log In</h1>
+      <div className="LoginDiv">
+      <h1 className='logInTitle'>Log In</h1>
       <form onSubmit={handleSubmit}>
         <ul>
           {errors.map((error, idx) => (
             <li key={idx}>{error}</li>
-          ))}
+            ))}
         </ul>
         <label>
           Email
@@ -37,7 +42,7 @@ function LoginFormPage() {
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             required
-          />
+            />
         </label>
         <label>
           Password
@@ -46,10 +51,21 @@ function LoginFormPage() {
             value={password}
             onChange={(e) => setPassword(e.target.value)}
             required
-          />
+            />
         </label>
-        <button type="submit">Log In</button>
+        <button classname="LogInButton"type="submit">Log In</button>
       </form>
+      </div>
+
+    {/* <div className="NewUserSignUp">
+            <h1 className="signupTitle">New Customer? Sign up!</h1>
+            <div className="SignUp">
+            <OpenModalButton
+                modalComponent={ <SignupFormModal />}
+                type='submit' className='signUpButton' buttonText={'Sign up!'}
+            />
+            </div>
+    </div> */}
     </>
   );
 }

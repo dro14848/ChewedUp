@@ -5,3 +5,83 @@
 .hidden {
   display: none;
 }
+.navBarUL {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+  background-color: #fff;
+  box-shadow: 0 1px 6px rgba(32,33,36,0.28);
+  height: 80px;
+  margin: 0;
+}
+
+.navBarHomeButton a,
+.navBarCartButton a {
+  display: inline-block;
+  padding: 20px 0;
+  font-size: 16px;
+  color: #757575;
+  text-decoration: none;
+  transition: color 0.15s ease-in-out;
+}
+
+.navBarHomeButton a:hover,
+.navBarCartButton a:hover {
+  color: #000;
+}
+
+.navBarCartButton {
+  position: relative;
+}
+
+.navBarCartButton::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 22px;
+  height: 22px;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+}
+
+.navBarProfileButton {
+  margin-left: 20px;
+}
+
+.profilebutton {
+  border: none;
+  padding: 0;
+  background-color: transparent;
+  cursor: pointer;
+  }
+  
+  .profilebutton .profilebuttonimage {
+  border-radius: 50%;
+  box-shadow: 0px 0px 3px 1px #b6b6b6;
+  transition: transform 0.3s ease-in-out;
+  }
+  
+  .profilebutton:hover .profilebuttonimage {
+  transform: scale(1.1);
+  }
+  
+  .profile-dropdown li {
+  margin-bottom: 10px;
+  word-break: break-word;
+  }
+  
+  .profile-dropdown button {
+  padding: 10px;
+  margin: 5px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  }
+  
+  .profile-dropdown button:hover {
+  background-color: #0056b3;
+  }

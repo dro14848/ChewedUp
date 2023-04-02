@@ -1,0 +1,84 @@
+.MainCartDiv {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+  }
+  
+  .cartItemDiv {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 80%;
+  }
+  
+  .cart-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 80%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-bottom: 1px solid #ccc;
+  }
+  
+  .cart-item-image {
+    width: 25%;
+  }
+  
+  .cart-item-image img {
+    width: 100%;
+  }
+  
+  .cart-item-details {
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-left: 10px;
+  }
+  
+  .cartItemName {
+    font-size: 20px;
+    margin-bottom: 10px;
+  }
+  
+  .cartPrice {
+    font-size: 18px;
+  }
+  
+  .deleteButtonDiv {
+    margin-top: 10px;
+  }
+  
+  .deleteItemButton {
+    background-color: red;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 5px 10px;
+    cursor: pointer;
+  }
+  
+  .totalpricediv {
+    margin-top: 20px;
+  }
+  
+  .cartTotalPrice {
+    font-size: 24px;
+  }
+  
+  .checkoutButton {
+    background-color: green;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+    margin-top: 20px;
+    font-size: 20px;
+  }
+  

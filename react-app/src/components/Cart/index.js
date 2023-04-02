@@ -2,6 +2,8 @@ import {useEffect, useState} from 'react'
 import {useDispatch, useSelector} from 'react-redux'
 import {useHistory} from 'react-router-dom'
 import { getCartThunk, deleteItemThunk, clearCartThunk } from '../../store/cart'
+import TrashIcon from '../icons/trash'
+import './cart.css'
 
 function Cart() {
     const dispatch = useDispatch()
@@ -68,15 +70,16 @@ function Cart() {
 
     return (
         <div className='MainCartDiv'>
-            <h1>Cart ({itemCount})</h1>
+            {/* <div className='cartItemDiv'>
+            <h1 classname= 'cartItemCount'>Cart ({itemCount})</h1>
             {items.cart?.map(({id, name, price, productimages}) => {
                 return (
                     <div key={id}>
-                    <h2>{name}</h2>
-                    <p>${price}</p>
+                    <h2 className='cartItemName'>{name}</h2>
+                    <p className='cartPrice'>${price}</p>
                     {productimages?.map(image => (
-              <img className="cart-image" src={image.image} alt="no image" key={image.id} />
-            ))}
+                        <img className="cart-image" src={image.image} alt="no image" key={image.id} />
+                        ))}
                     <div className='deleteButtonDiv'>
                         <button className='deleteItemButton' onClick={() => handleDeleteItem(id, price)}>Delete Item</button>
                     </div>
@@ -84,8 +87,29 @@ function Cart() {
                 
                 )
             })}
+            </div> */}
+            <div className='cartItemDiv'>
+  {items.cart?.map(({id, name, price, productimages}) => {
+    return (
+      <div key={id} className="cart-item">
+        <div className="cart-item-image">
+          {productimages?.map(image => (
+            <img className="cart-image" src={image.image} alt="no image" key={image.id} />
+          ))}
+        </div>
+        <div className="cart-item-details">
+          <h2 className='cartItemName'>{name}</h2>
+          <p className='cartPrice'>${price}</p>
+          <div className='deleteButtonDiv'>
+            <button className='deleteItemButton' onClick={() => handleDeleteItem(id, price)}><TrashIcon /></button>
+          </div>
+        </div>
+      </div>
+    )
+  })}
+</div>
             <div className='totalpricediv'>
-                <p>Total:${totalPrice.toFixed(2)} </p>
+                <p className='cartTotalPrice'>Total:${totalPrice.toFixed(2)} </p>
             </div>
             <div className='Checkout'>
                 <button className='checkoutButton' onClick={handleCheckout}>Checkout</button>

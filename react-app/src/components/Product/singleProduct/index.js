@@ -20,6 +20,7 @@ function SingleProduct() {
     const userId = user?.id
     const reviews = useSelector(state => state.reviewsReducer.productReviews)
     const reviewsArr = Object.values(reviews)
+    const isLoggedIn = user && user.id ? true : false;
 
 
 
@@ -43,8 +44,8 @@ function SingleProduct() {
                     <button className="add-to-cart"
                     onClick={() => dispatch(addItemThunk( user.id,id.id)).then(() => history.push('/cart'))}
                     > Add To Cart </button>
-                    ): <div className="logInAddCart">
-                        <button
+                    ): <div className="addToCart">
+                        <button className="add-to-cart"
                         onClick={() => history.push('/login')}
                         >Add to Cart</button>
                          </div> }
@@ -61,14 +62,20 @@ function SingleProduct() {
                     <p>{product.singleProduct.disclaimer}</p>
                 </div>
             </div>
-            {!userHasReview && (
+               {isLoggedIn ? (
+                !userHasReview && (
                     <div className="add-review">
                         <OpenModalButton
                             modalComponent={<AddReview />}
                             buttonText={"ADD NEW REVIEW"}
                         />
                     </div>
-                )}
+                )
+            ) : (
+                <div className="add-review">
+                    <p>Please log in to post a review.</p>
+                </div>
+            )}
 
          <div>
             <ProductReviews />

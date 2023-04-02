@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 import { allReviewsThunk, deleteReviewThunk } from "../../store/reviews";
+import TrashIcon from "../icons/trash";
 import './review.css'
 
 export const ProductReviews = () => {
@@ -35,7 +36,7 @@ export const ProductReviews = () => {
                 })
                 }
                   >
-                    Delete
+                    < TrashIcon />
                   </button>
                 )}
                         </div>
