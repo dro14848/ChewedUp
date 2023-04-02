@@ -29,7 +29,7 @@ def seed_products():
             price="13.99", type="chew"
         ),
         Product(
-            name ="Cozie Elmer the Elephant Dog Toy", description="The KONG Cozies are cute, soft and cuddly plush toys made with an extra layer of material, so they’re extra tough. Cozies are perfect for a game of fetch or as a comfort toy for your furry friend.",
+            name ="Elmer the Elephant Dog Toy", description="The KONG Cozies are cute, soft and cuddly plush toys made with an extra layer of material, so they’re extra tough. Cozies are perfect for a game of fetch or as a comfort toy for your furry friend.",
             disclaimer= "Every dog plays differently and, since not all toys are created equal, it’s always best to keep a close watch on your pup in case things get ruff. Supervised play will help toys last longer and most importantly keep your pal safe.", 
             price="6.99", type="chew"
         ),
@@ -54,7 +54,7 @@ def seed_products():
             price="10.99", type="chew"
         ),
         Product(
-            name ="Assorted Medium to Large Rope Dog Toys", description="Watch as your pup’s tail wags with excitement over these Otterly Pets Assorted Medium to Large Rope Dog Toys! Each set comes with an assortment five dog rope toys.",
+            name ="Assorted Rope Dog Toys", description="Watch as your pup’s tail wags with excitement over these Otterly Pets Assorted Medium to Large Rope Dog Toys! Each set comes with an assortment five dog rope toys.",
             disclaimer= "Every dog plays differently and, since not all toys are created equal, it’s always best to keep a close watch on your pup in case things get ruff. Supervised play will help toys last longer and most importantly keep your pal safe.", 
             price="10.99", type="chew"
         ),
@@ -69,7 +69,7 @@ def seed_products():
             price="10.99", type="chew"
         ),
         Product(
-            name =" Puppy Chew Chicken, Lamb & Apple Flavored Puppy Chew Toy", description="Help your newest furry family member get off on the right paw with Nylabone’s Puppy Chew Chicken, Lamb & Apple Toys and Treats! This toy and treat trio is made in the USA and designed to encourage healthy chewing habits right from the beginning",
+            name ="Flavored Puppy Chew Toy", description="Help your newest furry family member get off on the right paw with Nylabone’s Puppy Chew Chicken, Lamb & Apple Toys and Treats! This toy and treat trio is made in the USA and designed to encourage healthy chewing habits right from the beginning",
             disclaimer= "Every dog plays differently and, since not all toys are created equal, it’s always best to keep a close watch on your pup in case things get ruff. Supervised play will help toys last longer and most importantly keep your pal safe.", 
             price="10.99", type="chew"
         ),
