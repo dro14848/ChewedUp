@@ -21,10 +21,10 @@ function SingleProduct() {
     const reviews = useSelector(state => state.reviewsReducer.productReviews)
     const reviewsArr = Object.values(reviews)
     const isLoggedIn = user && user.id ? true : false;
+    const errorPagecheck = product.singleProduct
 
 
 
-    // const userReview = reviewsArr.find(review => review.user_Id === user?.id);
     const userHasReview = reviewsArr.some(({user_id}) => user_id === userId)
 
 
@@ -33,6 +33,13 @@ function SingleProduct() {
         }, [dispatch])
 
 
+    console.log('PRODUCT', errorPagecheck)
+    if (Object.values(errorPagecheck).length === 0 ){
+        return <div>
+            <h1>404 Not Found</h1>
+            <p>Sorry, the page you are looking for doesn't exist.</p>
+        </div>
+    }
 
     return (
         <div className="mainProductDiv">
