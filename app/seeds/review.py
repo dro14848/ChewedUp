@@ -40,7 +40,97 @@ def seed_reviews():
         Review(
         user_id = 3, product_id = 4, review ="Test review 3", rating = 1, created_at=datetime.datetime.now()
         ),
-
+        # 
+        Review(
+        user_id = 1, product_id = 5, review ="Test review 1", rating = 5, created_at=datetime.datetime.now()
+        ),
+        Review(
+        user_id = 2, product_id = 5, review ="Test review 2", rating = 3, created_at=datetime.datetime.now()
+        ),
+        Review(
+        user_id = 3, product_id = 5, review ="Test review 3", rating = 1, created_at=datetime.datetime.now()
+        ),
+        Review(
+        user_id = 1, product_id = 6, review ="Test review 1", rating = 5, created_at=datetime.datetime.now()
+        ),
+        Review(
+        user_id = 2, product_id = 6, review ="Test review 2", rating = 3, created_at=datetime.datetime.now()
+        ),
+        Review(
+        user_id = 3, product_id = 6, review ="Test review 3", rating = 1, created_at=datetime.datetime.now()
+        ),
+        Review(
+        user_id = 1, product_id = 7, review ="Test review 1", rating = 5, created_at=datetime.datetime.now()
+        ),
+        Review(
+        user_id = 2, product_id = 7, review ="Test review 2", rating = 3, created_at=datetime.datetime.now()
+        ),
+        Review(
+        user_id = 3, product_id = 7, review ="Test review 3", rating = 1, created_at=datetime.datetime.now()
+        ),
+        Review(
+        user_id = 1, product_id = 8, review ="Test review 1", rating = 5, created_at=datetime.datetime.now()
+        ),
+        Review(
+        user_id = 2, product_id = 8, review ="Test review 2", rating = 3, created_at=datetime.datetime.now()
+        ),
+        Review(
+        user_id = 3, product_id = 8, review ="Test review 3", rating = 1, created_at=datetime.datetime.now()
+        ),
+        Review(
+        user_id = 1, product_id = 9, review ="Test review 1", rating = 5, created_at=datetime.datetime.now()
+        ),
+        Review(
+        user_id = 2, product_id = 9, review ="Test review 2", rating = 3, created_at=datetime.datetime.now()
+        ),
+        Review(
+        user_id = 3, product_id = 9, review ="Test review 3", rating = 1, created_at=datetime.datetime.now()
+        ),
+        Review(
+        user_id = 1, product_id = 10, review ="Test review 1", rating = 5, created_at=datetime.datetime.now()
+        ),
+        Review(
+        user_id = 2, product_id = 10, review ="Test review 2", rating = 3, created_at=datetime.datetime.now()
+        ),
+        Review(
+        user_id = 3, product_id = 10, review ="Test review 3", rating = 1, created_at=datetime.datetime.now()
+        ),
+        Review(
+        user_id = 1, product_id = 11, review ="Test review 1", rating = 5, created_at=datetime.datetime.now()
+        ),
+        Review(
+        user_id = 2, product_id = 11, review ="Test review 2", rating = 3, created_at=datetime.datetime.now()
+        ),
+        Review(
+        user_id = 3, product_id = 11, review ="Test review 3", rating = 1, created_at=datetime.datetime.now()
+        ),
+        Review(
+        user_id = 1, product_id = 12, review ="Test review 1", rating = 5, created_at=datetime.datetime.now()
+        ),
+        Review(
+        user_id = 2, product_id = 12, review ="Test review 2", rating = 3, created_at=datetime.datetime.now()
+        ),
+        Review(
+        user_id = 3, product_id = 12, review ="Test review 3", rating = 1, created_at=datetime.datetime.now()
+        ),
+        Review(
+        user_id = 1, product_id = 13, review ="Test review 1", rating = 5, created_at=datetime.datetime.now()
+        ),
+        Review(
+        user_id = 2, product_id = 13, review ="Test review 2", rating = 3, created_at=datetime.datetime.now()
+        ),
+        Review(
+        user_id = 3, product_id = 13, review ="Test review 3", rating = 1, created_at=datetime.datetime.now()
+        ),
+        Review(
+        user_id = 1, product_id = 14, review ="Test review 1", rating = 5, created_at=datetime.datetime.now()
+        ),
+        Review(
+        user_id = 2, product_id = 14, review ="Test review 2", rating = 3, created_at=datetime.datetime.now()
+        ),
+        Review(
+        user_id = 3, product_id = 14, review ="Test review 3", rating = 1, created_at=datetime.datetime.now()
+        ),
     ]
 
     for review in reviews:

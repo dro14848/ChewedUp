@@ -1,0 +1,37 @@
+.footerDiv {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #FFFFFF;
+    color: #757575;
+    padding: 20px;
+  }
+  
+  .aboutME {
+    font-weight: bold;
+    font-size: 18px;
+    margin-right: 20px;
+  }
+  
+  .dev {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .devName {
+    font-weight: bold;
+    font-size: 16px;
+    margin-bottom: 10px;
+  }
+  
+  .githubLink, .linkedInLink {
+    color: #757575;
+    margin-bottom: 5px;
+    text-decoration: none;
+  }
+  
+  .githubLink:hover, .linkedInLink:hover {
+    color: #dcdcdc;
+  }
+  

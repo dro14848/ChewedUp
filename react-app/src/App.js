@@ -9,6 +9,7 @@ import AllProducts from "./components/Product";
 import SingleProduct from "./components/Product/singleProduct";
 import Cart from "./components/Cart";
 import Order from "./components/Orders";
+import Footer from "./components/Footer"
 
 function App() {
   const dispatch = useDispatch();
@@ -40,9 +41,23 @@ function App() {
           <Route exact path='/order'>
             <Order />
           </Route>
+          <Route path="*">
+            <NotFound />
+          </Route>
         </Switch>
       )}
+      <Footer/>
     </>
+  );
+}
+
+function NotFound() {
+
+  return (
+    <div>
+      <h1>404 Not Found</h1>
+      <p>Sorry, the page you are looking for doesn't exist.</p>
+    </div>
   );
 }
 
