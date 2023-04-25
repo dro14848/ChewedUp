@@ -8,9 +8,20 @@ class PetProfile(db.Model):
         __table_args__ = {'schema': SCHEMA}
 
     id = db.Column(db.Integer, primary_key=True)
-
+    name = db.Column()
+    breed = db.Column()
+    picture = db.Column()
+    weight = db.Column()
+    gender = db.Column()
+    birthday = db.Column()
 
     def to_dict(self):
         return {
-            'id': self.id
+            'id': self.id,
+            'name': self.name,
+            'breed': self.breed,
+            'picture': self.picture,
+            'weight': self.weight,
+            'gender': self.gender,
+            'birthday': self.birthday
         }
