@@ -9,6 +9,7 @@ import AllProducts from "./components/Product";
 import SingleProduct from "./components/Product/singleProduct";
 import Cart from "./components/Cart";
 import Order from "./components/Orders";
+import PetProfile from "./components/PetProfile";
 import Footer from "./components/Footer"
 
 function App() {
@@ -40,6 +41,9 @@ function App() {
           </Route>
           <Route exact path='/order'>
             <Order />
+          </Route>
+          <Route exact path = '/pets'>
+            <PetProfile />
           </Route>
           <Route path="*">
             <NotFound />

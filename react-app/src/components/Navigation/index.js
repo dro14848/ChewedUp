@@ -14,14 +14,17 @@ function Navigation({ isLoaded }){
 			<li className='navBarHomeButton'>
 				<NavLink exact to="/">Home</NavLink>
 			</li>
-			<li className='navBarCartButton'>
+			{/* <li className='navBarCartButton'>
 				<NavLink exact to='/cart'><CartIcon/></NavLink>
-			</li>
+			</li> */}
 			{isLoaded && (
 				<li className='navBarProfileButton'>
 					<ProfileButton user={sessionUser} />
 				</li>
 			)}
+			<li className='navBarCartButton'>
+				<NavLink exact to='/cart'><CartIcon/></NavLink>
+			</li>
 		</ul>
 	);
 }

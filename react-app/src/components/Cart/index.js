@@ -10,7 +10,7 @@ function Cart() {
     const history = useHistory()
     const user = useSelector(state => state.session.user)
     const items = useSelector(state => state.cartReducer.cart)
-    const itemsArr = Object.values(items || [])
+    // const itemsArr = Object.values(items || [])
     const [itemCount, setItemCount] = useState(0)
     const [totalPrice, setTotalPrice] = useState(0.00)
 
