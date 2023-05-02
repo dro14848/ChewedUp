@@ -13,6 +13,9 @@ function PetProfile(){
             <div>
                 <button>Add a Pet</button>
             </div>
+            <div>
+                <p>Pets </p>
+            </div>
         </div>
     )
 }
