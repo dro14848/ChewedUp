@@ -8,12 +8,14 @@ class PetProfile(db.Model):
         __table_args__ = {'schema': SCHEMA}
 
     id = db.Column(db.Integer, primary_key=True)
-    name = db.Column()
-    breed = db.Column()
-    picture = db.Column()
-    weight = db.Column()
-    gender = db.Column()
-    birthday = db.Column()
+    name = db.Column(db.String(100))
+    breed = db.Column(db.String(100))
+    picture = db.Column(db.String(100))
+    weight = db.Column(db.Integer)
+    birthday = db.Column(db.String(), nullable=False)
+
+
+    owner = db.relationship("User", back_populates='petprofile')
 
     def to_dict(self):
         return {
@@ -22,6 +24,5 @@ class PetProfile(db.Model):
             'breed': self.breed,
             'picture': self.picture,
             'weight': self.weight,
-            'gender': self.gender,
             'birthday': self.birthday
         }
