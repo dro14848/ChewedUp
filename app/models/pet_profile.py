@@ -13,9 +13,10 @@ class PetProfile(db.Model):
     picture = db.Column(db.String(100))
     weight = db.Column(db.Integer)
     birthday = db.Column(db.String(), nullable=False)
+    owner =db.Column(db.Integer, db.ForeignKey(add_prefix_for_prod('users.id')), nullable=False)
 
 
-    owner = db.relationship("User", back_populates='petprofile')
+    user = db.relationship("User", back_populates='petprofile')
 
     def to_dict(self):
         return {
