@@ -1,8 +1,8 @@
 from .db import db, environment, SCHEMA, add_prefix_for_prod
 
 
-class PetProfile(db.Model):
-    __tablename__="petprofile"
+class Pet(db.Model):
+    __tablename__="pets"
 
     if environment == "production":
         __table_args__ = {'schema': SCHEMA}
@@ -13,10 +13,10 @@ class PetProfile(db.Model):
     picture = db.Column(db.String(100))
     weight = db.Column(db.Integer)
     birthday = db.Column(db.String(), nullable=False)
-    owner =db.Column(db.Integer, db.ForeignKey(add_prefix_for_prod('users.id')), nullable=False)
+    owner =db.Column(db.Integer, db.ForeignKey(add_prefix_for_prod('users.id')))
 
 
-    user = db.relationship("User", back_populates='petprofile')
+    user = db.relationship("User", back_populates='pets')
 
     def to_dict(self):
         return {
@@ -25,5 +25,6 @@ class PetProfile(db.Model):
             'breed': self.breed,
             'picture': self.picture,
             'weight': self.weight,
-            'birthday': self.birthday
+            'birthday': self.birthday,
+            'owner': self.owner
         }
